@@ -1,0 +1,79 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 10px;
+
+    color: rgb(0, 90, 93);
+    background: linear-gradient(45deg, #cd1de4, #5c75e4);
+    background-size: 170% 170%;
+}
+
+.main {
+    margin: 0 auto;
+
+    width: 60em;
+    height: 40em;
+
+    background: rgba(153, 183, 248, 0.5);
+}
+
+.container {
+    padding: 1.5em;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 3em;
+}
+
+.main-button {
+    color: rgb(255, 255, 255);
+    background: darkcyan;
+    
+    margin-top: 4em;
+    padding: 1.5em;
+
+    cursor: pointer;
+}
+
+.main-text {
+    margin-top: 4em;
+    font-size: 3em;
+}
+
+@media (max-width: 920px) {
+    body {
+        font-size: 7px;
+    }
+
+    .main-button,
+    .main-text {
+        margin: 2em;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .main {
+        width: 40em;
+        height: 25em;
+    }
+
+    .main-button {
+        margin: 1em;
+        padding: 1em;
+    }
+
+    .main-title {
+        font-size: 2em;
+    }
+
+    .main-text {
+        margin: 1em;
+        font-size: 2em;
+    }
+} 
