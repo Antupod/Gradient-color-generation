@@ -1,24 +1,33 @@
 function colorBackground() {
-    const colorSelection = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+    const firstColor = document.querySelector('#first-color');
+    const secondColor = document.querySelector('#second-color');
+    const colorCode = document.querySelector('.color-code');
 
-    let firstColor = generateRandomColor(colorSelection);
-    let secondColor = generateRandomColor(colorSelection);
+    let firstColorGenerate = generateRandomColor();
+    let secondColorGenerate = generateRandomColor();
 
-    document.getElementById('first-color').innerHTML = `#${firstColor}`;
-    document.getElementById('second-color').innerHTML = `#${secondColor}`;
+    let gradientColorCode = `linear-gradient(90deg, #${firstColorGenerate}, #${secondColorGenerate})`;
 
-    document.body.style.background = `linear-gradient(90deg, #${firstColor}, #${secondColor})`;
-    document.body.style.backgroundSize = "170% 170%";
+    firstColor.innerHTML = `#${firstColorGenerate}`;
+    secondColor.innerHTML = `#${secondColorGenerate}`;
+    colorCode.innerHTML = gradientColorCode;
+
+    document.body.style.background = gradientColorCode;
 }
 
-function getRandomArrayElement(colorSelection){
+function getRandomArrayElement() {
+    const colorSelection = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+
     return colorSelection[Math.floor(Math.random()*colorSelection.length)];
 }
 
-function generateRandomColor(colorSelection) {
+function generateRandomColor() {
+    const maxHexLength = 6;
     let generateColorValue = '';
-    for (let i = 0; i < 6; i++) {
-        generateColorValue += getRandomArrayElement(colorSelection);
+
+    for (let i = 0; i < maxHexLength; i++) {
+        generateColorValue += getRandomArrayElement();
     }
+
     return generateColorValue;
-};
+}
